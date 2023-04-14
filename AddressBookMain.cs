@@ -100,7 +100,7 @@ namespace AddressBookSystem
                     contact = data;
                 }
             }
-            if (contact != null)
+            if (contact == null)
             {
                 Console.WriteLine("No contact exist with respect to firstname");
             }
