@@ -1,5 +1,5 @@
 ﻿using System;
-namespace AddressBook
+namespace AddressBookSystem
 {
     class Program
     {
@@ -7,7 +7,7 @@ namespace AddressBook
         {
             Console.WriteLine("Address Book System");
             AddressBookMain addressBook = new AddressBookMain();
-            addressBook.AddressBook();
+            addressBook.AddContact();
         }
     }
 }
