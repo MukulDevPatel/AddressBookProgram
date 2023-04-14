@@ -9,11 +9,10 @@ namespace AddressBookSystem
         {
             Console.WriteLine("Address Book System");
             AddressBookMain addressBook = new AddressBookMain();
-            Console.WriteLine("Address Book Entry");
             bool flag = true;
             while (flag)
             {
-                Console.WriteLine("Enter the option\n1. Add Contact\n2. Edit Contact\n3. Exit.");
+                Console.WriteLine("Enter the option\n1. Add Contact\n2. Edit Contact\n3. Delete\n4 Exit.");
                 int option = Convert.ToInt32(Console.ReadLine());
                 switch (option)
                 {
@@ -24,6 +23,9 @@ namespace AddressBookSystem
                         addressBook.EditContact();
                         break;
                     case 3:
+                        addressBook.Delete();
+                        break;
+                    case 4:
                         flag = false;
                         break;
 

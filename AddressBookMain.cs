@@ -11,21 +11,25 @@ namespace AddressBookSystem
     public class AddressBookMain
     {
         List<Contact> addressList = new List<Contact>();
-        public  AddressBookMain()
-        {
-            Contact contact = new Contact()
-            {
-                FirstName = "Mukul",
-                LastName = "Patel",
-                Address = "Khopli",
-                City = "Durg",
-                State = "Chhattisgarh",
-                Zip = "466565",
-                PhoneNumber = "1234567890",
-                Email = "mukulpatel@gmail.com",
-            };
-            addressList.Add(contact);
-        }
+
+        //UC1
+        ////public AddressBookMain()   
+        ////{
+        ////    Contact contact = new Contact()
+        ////    {
+        ////        FirstName = "Mukul",
+        ////        LastName = "Patel",
+        ////        Address = "Khopli",
+        ////        City = "Durg",
+        ////        State = "Chhattisgarh",
+        ////        Zip = "466565",
+        ////        PhoneNumber = "1234567890",
+        ////        Email = "mukulpatel@gmail.com",
+        ////    };
+        ////    addressList.Add(contact);
+        ////}
+        
+        //UC2
         public void AddContact()
         {
             Contact contact = new Contact()
@@ -41,11 +45,8 @@ namespace AddressBookSystem
             };
             addressList.Add(contact);
         }
-        public void EditContact(string name)
-        {
-            
-        }
 
+        //UC3
         public void EditContact()
         {
             Console.WriteLine("Edit using First name");
@@ -84,6 +85,28 @@ namespace AddressBookSystem
                             break;
                     }
                 }
+            }
+        }
+
+        //UC4
+        public void Delete()
+        {
+            Contact contact = new Contact();
+            string name = Console.ReadLine();
+            foreach (var data in addressList)
+            {
+                if (data.FirstName.Equals(name))
+                {
+                    contact = data;
+                }
+            }
+            if (contact != null)
+            {
+                Console.WriteLine("No contact exist with respect to firstname");
+            }
+            else
+            {
+                addressList.Remove(contact);
             }
         }
     }
