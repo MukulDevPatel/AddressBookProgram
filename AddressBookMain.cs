@@ -13,23 +13,23 @@ namespace AddressBookSystem
         List<Contact> addressList = new List<Contact>();
 
         //UC1
-        ////public AddressBookMain()   
-        ////{
-        ////    Contact contact = new Contact()
-        ////    {
-        ////        FirstName = "Mukul",
-        ////        LastName = "Patel",
-        ////        Address = "Khopli",
-        ////        City = "Durg",
-        ////        State = "Chhattisgarh",
-        ////        Zip = "466565",
-        ////        PhoneNumber = "1234567890",
-        ////        Email = "mukulpatel@gmail.com",
-        ////    };
-        ////    addressList.Add(contact);
-        ////}
-        
-        //UC2
+        public AddressBookMain()
+        {
+            Contact contact = new Contact()
+            {
+                FirstName = "mukul",
+                LastName = "patel",
+                Address = "khopli",
+                City = "durg",
+                State = "chhattisgarh",
+                Zip = "466565",
+                PhoneNumber = "1234567890",
+                Email = "mukulpatel@gmail.com",
+            };
+            addressList.Add(contact);
+        }
+
+        //UC2, UC5
         public void AddContact()
         {
             Contact contact = new Contact()
@@ -44,6 +44,7 @@ namespace AddressBookSystem
                 Email = Console.ReadLine(),
             };
             addressList.Add(contact);
+            Display(addressList);
         }
 
         //UC3
@@ -86,6 +87,7 @@ namespace AddressBookSystem
                     }
                 }
             }
+            Display(addressList);
         }
 
         //UC4
@@ -100,13 +102,21 @@ namespace AddressBookSystem
                     contact = data;
                 }
             }
-            if (contact != null)
+            if (contact == null)
             {
                 Console.WriteLine("No contact exist with respect to firstname");
             }
             else
             {
                 addressList.Remove(contact);
+            }
+            Display(addressList);
+        }
+        public void Display(List<Contact> contacts)
+        {
+            foreach (var data in contacts)
+            {
+                Console.WriteLine(data.FirstName + "\n" + data.LastName + "\n" + data.Address + "\n" + data.Address + "\n" + data.City + "\n" + data.State + "\n" + data.Zip + "\n" + data.PhoneNumber + "\n" + data.Email);
             }
         }
     }
